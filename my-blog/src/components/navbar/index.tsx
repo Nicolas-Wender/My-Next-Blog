@@ -2,9 +2,14 @@
 import { useState } from 'react'
 
 export default function Navbar() {
-  const [state, setState] = useState(false)
+  const [state, setState] = useState<Boolean>(false)
 
-  const navigation = [
+  interface NavigationItem {
+    title: string;
+    path: string;
+  }
+
+  const navigation: NavigationItem[] = [
     { title: 'Home', path: 'javascript:void(0)' },
     { title: 'Blog', path: 'javascript:void(0)' },
     { title: 'About', path: 'javascript:void(0)' },
@@ -74,3 +79,5 @@ export default function Navbar() {
     </nav>
   )
 }
+
+
