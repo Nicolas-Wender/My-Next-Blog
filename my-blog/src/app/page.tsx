@@ -1,5 +1,11 @@
-import Image from 'next/image'
+import GridPosts from '@/components/GridPosts'
+import Hero from '@/components/Hero'
 
 export default function Home() {
-  return (<></>)
+  return (
+    <>
+      <Hero />
+      <GridPosts />
+    </>
+  )
 }

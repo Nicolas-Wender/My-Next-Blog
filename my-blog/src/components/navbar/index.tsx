@@ -1,26 +1,27 @@
 'use client'
 import { useState } from 'react'
 
+interface NavigationItem {
+  title: string;
+  path: string;
+}
+
 export default function Navbar() {
   const [state, setState] = useState<Boolean>(false)
 
-  interface NavigationItem {
-    title: string;
-    path: string;
-  }
 
   const navigation: NavigationItem[] = [
-    { title: 'Home', path: 'javascript:void(0)' },
-    { title: 'Blog', path: 'javascript:void(0)' },
-    { title: 'About', path: 'javascript:void(0)' },
-    { title: 'Newsletter', path: 'javascript:void(0)' }
+    { title: 'Home', path: '#' },
+    { title: 'Blog', path: '#' },
+    { title: 'About', path: '#' },
+    { title: 'Newsletter', path: '#' }
   ]
 
   return (
-    <nav className="bg-white border-b w-full md:static md:text-sm md:border-none">
+    <nav className="bg-white border-b w-full  md:text-sm md:border-none fixed top-0 z-50">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <a href="javascript:void(0)" className='text-2xl font-semibold'>MY BLOG</a>
+          <a href="#" className='text-2xl font-semibold'>MY BLOG</a>
           <div className="md:hidden">
             <button
               className="text-gray-600 hover:text-gray-900"
@@ -63,7 +64,7 @@ export default function Navbar() {
             state ? 'block' : 'hidden'
           }`}
         >
-          <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0 text-sm">
+          <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0 text-sm gap-3">
             {navigation.map((item, idx) => {
               return (
                 <li key={idx} className="text-gray-600  hover:text-gray-900">
