@@ -16,7 +16,7 @@ export default function Hero() {
         </div>
         <div className="flex-1 flex justify-center lg:justify-end mt-4 lg:mt-0 lg:ml-3 ">
           <Image
-          className=''
+            className="w-auto h-auto"
             src="/The-Little-Things-Working.png" // Caminho relativo ao diretório 'public'
             alt="Descrição da imagem"
             width={300} // Largura da imagem

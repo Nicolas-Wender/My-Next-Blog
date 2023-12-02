@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+plano.txt
 /.pnp
 .pnp.js
 .yarn/install-state.gz

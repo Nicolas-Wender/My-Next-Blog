@@ -16,7 +16,7 @@ interface PostCardProps {
 export default function PostCard({ items }: PostCardProps) {
   return (
     <li className="w-full mx-auto sm:max-w-sm">
-      <a href={items.href} >
+      <a href={items.href}>
         <Image
           className="w-full"
           src={items.img}
