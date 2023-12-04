@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { MdArrowOutward } from 'react-icons/md'
+import Link from 'next/link'
 
 interface PostCardProps {
   items: {
@@ -8,7 +9,7 @@ interface PostCardProps {
     desc: string
     img: string
     date: string
-    href: string
+    id: string
     autor: string
   }
 }
@@ -16,7 +17,7 @@ interface PostCardProps {
 export default function PostCard({ items }: PostCardProps) {
   return (
     <li className="w-full mx-auto sm:max-w-sm">
-      <a href={items.href}>
+      <Link href={`/posts/${items.id}`}>
         <Image
           className="w-full"
           src={items.img}
@@ -39,7 +40,7 @@ export default function PostCard({ items }: PostCardProps) {
             {items.desc}
           </p>
         </div>
-      </a>
+      </Link>
     </li>
   )
 }

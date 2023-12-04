@@ -8,13 +8,13 @@ interface PostCardProps {
     desc: string
     img: string
     date: string
-    href: string
+    id: string
     autor: string
   }
 }
 export default function PostCard2({ items }: PostCardProps) {
   return (
-    <a className="h-1/2 w-full flex gap-x-4" href={items.href}>
+    <a className="h-1/2 w-full flex gap-x-4" href={items.id}>
       <Image
         className="w-1/2 "
         src={items.img}

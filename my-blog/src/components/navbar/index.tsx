@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link';
 
 interface NavigationItem {
   title: string;
@@ -11,17 +12,17 @@ export default function Navbar() {
 
 
   const navigation: NavigationItem[] = [
-    { title: 'Home', path: '#' },
-    { title: 'Blog', path: '#' },
-    { title: 'About', path: '#' },
-    { title: 'Newsletter', path: '#' }
+    { title: 'Home', path: '/' },
+    
+    { title: 'About', path: '/About' },
+    { title: 'Newsletter', path: '/Newsletter' }
   ]
 
   return (
     <nav className="bg-white border-b w-full  md:text-sm md:border-none fixed top-0 z-50">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <a href="#" className='text-2xl font-semibold'>MY BLOG</a>
+          <Link href="/" className='text-2xl font-semibold'>MY BLOG</Link>
           <div className="md:hidden">
             <button
               className="text-gray-600 hover:text-gray-900"
@@ -68,9 +69,9 @@ export default function Navbar() {
             {navigation.map((item, idx) => {
               return (
                 <li key={idx} className="text-gray-600  hover:text-gray-900">
-                  <a href={item.path} className="block text-base">
+                  <Link href={item.path} className="block text-base">
                     {item.title}
-                  </a>
+                  </Link>
                 </li>
               )
             })}
