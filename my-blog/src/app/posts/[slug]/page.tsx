@@ -1,9 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
-import data from '../../api/data.json'
+import { getPostMetadata } from '@/components/PostCard/getPostMetadata'
+
 
 export default async function Page({ params }: { params: { slug: number } }) {
   let { slug } = params
+
 
   return (
     <div className=" bg-white px-6 py-24 sm:py-32 lg:px-0">
@@ -23,7 +25,7 @@ export default async function Page({ params }: { params: { slug: number } }) {
             </p>
             <Image
               className="w-auto h-auto my-6 mx-auto"
-              src={data.posts[slug - 1].img}
+              src={""}
               alt="Descrição da imagem"
               width={300}
               height={300}

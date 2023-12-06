@@ -1,7 +1,13 @@
 import React from 'react'
 import PostCard from '../PostCard'
-import data from '../../app/api/data.json'
-export default function GridPosts() {
+import { getPostMetadata } from '../PostCard/getPostMetadata'
+import { post } from '../PostCard/PostMetadata'
+
+export default async function GridPosts({ page }: {
+  page: number
+}) {
+  const posts: post[] = await getPostMetadata(page)
+
   return (
     <section className="py-16">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
@@ -17,8 +23,8 @@ export default function GridPosts() {
           </a>
         </div>
         <ul className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
-          {data.posts.map(items => (
-            <PostCard items={items} />
+          {posts.map(item => (
+            <PostCard key={item.id} {...item} />
           ))}
         </ul>
       </div>
