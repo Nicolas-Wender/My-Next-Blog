@@ -6,8 +6,6 @@ export const GET = async (req: Request): Promise<NextResponse> => {
 
   const page = searchParams.get('page')
 
-  console.log(page)
-
   const POST_PER_PAGE: number = 9
   const skip = (Number(page) - 1) * POST_PER_PAGE
 

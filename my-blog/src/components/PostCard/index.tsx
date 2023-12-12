@@ -17,7 +17,7 @@ export default function PostCard(item: post) {
         />
         <div className="mt-8 space-y-3 group">
           <span className="block text-indigo-600 text-sm font-semibold">
-            {item.author} • {item.date.toLocaleString()}
+            {item.author} • {new Date(item.date).toLocaleDateString('pt-BR')}
           </span>
           <div className="flex justify-between items-start ">
             <h3 className="text-2xl text-gray-800 duration-150 w-[90%] font-semibold group-hover:text-indigo-600">

@@ -1,12 +1,12 @@
 import React from 'react'
 import PostCard from '../PostCard'
-import { getPostMetadata } from '../PostCard/getPostMetadata'
+import { getPostMetadataPerPage } from '../PostCard/getPostMetadata'
 import { post } from '../PostCard/PostMetadata'
 
 export default async function GridPosts({ page }: {
   page: number
 }) {
-  const posts: post[] = await getPostMetadata(page)
+  const posts: post[] = await getPostMetadataPerPage(page)
 
   return (
     <section className="py-16">

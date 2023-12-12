@@ -1,11 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import { getPostMetadata } from '@/components/PostCard/getPostMetadata'
-
+import { post } from '@/components/PostCard/PostMetadata'
 
 export default async function Page({ params }: { params: { slug: number } }) {
-  let { slug } = params
-
+  const { slug } = params
+  const data: post = await getPostMetadata(slug)
 
   return (
     <div className=" bg-white px-6 py-24 sm:py-32 lg:px-0">
@@ -13,33 +13,24 @@ export default async function Page({ params }: { params: { slug: number } }) {
         <div className="lg:row-start-1 lg:mx-auto flex justify-center lg:w-full lg:max-w-7xl lg:gap-x-8 md:px-8">
           <div className="mx-auto max-w-4xl">
             <p className="text-base font-semibold leading-7 text-indigo-600">
-              Deploy faster
+              {data.desc}
             </p>
             <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              A better workflow {slug}
+              {data.title}
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-700 mb-4">
-              Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem.
-              At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at
-              vitae feugiat egestas.
+              {data.content}
             </p>
             <Image
               className="w-auto h-auto my-6 mx-auto"
-              src={""}
+              src={data.img}
               alt="Descrição da imagem"
               width={300}
               height={300}
             />
 
             <div className=" text-base leading-7 text-gray-700 ">
-              <p>
-                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
-                risus enim. Mattis mauris semper sed amet vitae sed turpis id.
-                Id dolor praesent donec est. Odio penatibus risus viverra tellus
-                varius sit neque erat velit. Faucibus commodo massa rhoncus,
-                volutpat. Dignissim sed eget risus enim. Mattis mauris semper
-                sed amet vitae sed turpis id.
-              </p>
+              <p>{data.content}</p>
               <ul role="list" className="mt-8 space-y-8 text-gray-600">
                 <li className="flex gap-x-3">
                   <span>
