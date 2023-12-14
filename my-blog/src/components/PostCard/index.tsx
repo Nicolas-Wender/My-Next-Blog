@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { MdArrowOutward } from 'react-icons/md'
 import Link from 'next/link'
-import { post } from './PostMetadata'
+import { post } from '@/types/post'
 
 export default function PostCard(item: post) {
   return (

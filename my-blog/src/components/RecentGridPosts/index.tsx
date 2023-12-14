@@ -2,9 +2,9 @@ import React from 'react'
 import PostCard2 from '../PostCard/PostCard2'
 import Image from 'next/image'
 import { MdArrowOutward } from 'react-icons/md'
-import { getPostMetadataPerPage } from '../PostCard/getPostMetadata'
-import { post } from '../PostCard/PostMetadata'
 import Link from 'next/link'
+import { post } from '@/types/post'
+import { getPostMetadataPerPage } from '@/services/getPostMetadataPerPage'
 
 export default async function RecentGridPosts() {
   let posts: post[] = await getPostMetadataPerPage(1)

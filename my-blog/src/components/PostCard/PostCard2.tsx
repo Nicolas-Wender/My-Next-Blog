@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import { MdArrowOutward } from 'react-icons/md'
-import { post } from './PostMetadata'
 import Link from 'next/link'
+import { post } from '@/types/post'
 
 export default function PostCard2(item: post) {
   return (

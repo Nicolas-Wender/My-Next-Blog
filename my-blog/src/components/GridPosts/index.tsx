@@ -1,7 +1,7 @@
 import React from 'react'
 import PostCard from '../PostCard'
-import { getPostMetadataPerPage } from '../PostCard/getPostMetadata'
-import { post } from '../PostCard/PostMetadata'
+import { post } from '@/types/post'
+import { getPostMetadataPerPage } from '@/services/getPostMetadataPerPage'
 
 export default async function GridPosts({ page }: {
   page: number
