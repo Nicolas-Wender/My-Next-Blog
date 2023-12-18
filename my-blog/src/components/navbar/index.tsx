@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { NavigationItem } from '@/types/navigationItem'
+import { hoverEffect } from '@/utils/hoverEffect'
 
 export default function Navbar() {
   const [state, setState] = useState<Boolean>(false)
@@ -21,10 +22,7 @@ export default function Navbar() {
           </Link>
 
           <div className="md:hidden">
-            <button
-              className="text-white"
-              onClick={() => setState(!state)}
-            >
+            <button className="text-white" onClick={() => setState(!state)}>
               {state ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -62,16 +60,13 @@ export default function Navbar() {
             state ? 'block' : 'hidden'
           }`}
         >
-          <ul className="justify-end items-center space-y-6 md:flex md:space-x-10 md:space-y-0 text-sm">
+          <ul className="justify-end items-center space-y-6 md:flex md:space-x-10 md:space-y-0 text-md">
             {navigation.map((item, idx) => {
               return (
-                <li
-                  key={idx}
-                  className="text-white hover:bg-[rgba(82,82,91,0.5)] px-5 py-1 rounded-full"
-                >
+                <li key={idx} className={'text-white group'}>
                   <Link
                     href={item.path}
-                    className="block text-lg font-semibold"
+                    className={'block text-lg font-semibold' + hoverEffect}
                   >
                     {item.title}
                   </Link>

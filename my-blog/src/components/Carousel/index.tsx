@@ -41,14 +41,14 @@ export default function Carousel({ images }: { images: post[] }) {
               <Link href={`/posts/${image.id}`}>
                 <div className="max-w-screen-xl mx-auto mb-10 md:rounded-xl overflow-hidden">
                   <div className="relative lg:flex">
-                    <div className="absolute h-full lg:h-auto w-full md:flex md:flex-col md:justify-center bg-[rgba(24,24,27,0.8)] lg:bg-zinc-900 md:text-start p-5 lg:relative lg:w-1/3 lg:py-32">
+                    <div className="absolute h-full lg:h-auto w-full md:flex md:flex-col md:justify-center bg-[rgba(24,24,27,0.8)] lg:bg-zinc-900 md:text-start p-10 lg:relative lg:w-1/3 lg:py-32">
                       <h3 className="text-white text-sm">
                         {image.author} • {formDate(image.date)}
                       </h3>
-                      <p className="text-white text-3xl font-bold sm:text-4xl my-3">
+                      <p className="text-white text-3xl font-bold sm:text-4xl my-3 overflow-hidden text-ellipsis line-clamp-3 box-content">
                         {image.title}
                       </p>
-                      <p className="hidden md:inline-flex lg:hidden md:my-10 text-white">
+                      <p className="hidden md:inline-flex lg:hidden md:my-10 text-white overflow-hidden text-ellipsis line-clamp-4 box-content">
                         Duis aute irure dolor in reprehenderit in voluptate
                         velit esse cillum dolore eu fugiat nulla pariatur.
                         Excepteur sint occaecat cupidatat non proident, sunt in

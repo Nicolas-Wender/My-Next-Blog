@@ -4,8 +4,7 @@ import { MdArrowOutward } from 'react-icons/md'
 import Link from 'next/link'
 import { post } from '@/types/post'
 import formDate from '@/utils/formDate'
-
-const groupHoverPost = ` group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-[#4F46E5] to-[#E114E5] duration-300`
+import { hoverEffect } from '@/utils/hoverEffect'
 
 export default function PostCard(item: post) {
   return (
@@ -26,8 +25,8 @@ export default function PostCard(item: post) {
           <div className="flex justify-between items-start ">
             <h3
               className={
-                'text-2xl text-white duration-150 w-[90%] font-bold' +
-                groupHoverPost
+                'text-2xl text-white duration-150 w-[90%] font-bold overflow-hidden text-ellipsis line-clamp-3 box-content' +
+                hoverEffect
               }
             >
               {item.title}
@@ -35,7 +34,7 @@ export default function PostCard(item: post) {
             <MdArrowOutward className="text-2xl text-white group-hover:text-[#E114E5]" />
           </div>
 
-          <p className="text-white text-base duration-150 font-light">
+          <p className="text-white text-base duration-150 font-light overflow-hidden text-ellipsis line-clamp-3 box-content">
             {item.desc}
           </p>
         </div>
