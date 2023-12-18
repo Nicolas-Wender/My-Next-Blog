@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { MdArrowOutward } from 'react-icons/md'
 import Link from 'next/link'
 import { post } from '@/types/post'
+import formDate from '@/utils/formDate'
 
 export default function PostCard2(item: post) {
   return (
@@ -16,7 +17,7 @@ export default function PostCard2(item: post) {
       />
       <div className="flex flex-col gap-y-4 group w-1/2">
         <span className="block text-indigo-600 text-sm font-semibold">
-          {item.author} • {item.date.toLocaleString()}
+          {item.author} • {formDate(item.date)}
         </span>
         <div className="flex justify-between items-start ">
           <h3 className="text-xl text-gray-800 duration-150 w-[90%] font-semibold group-hover:text-indigo-600">

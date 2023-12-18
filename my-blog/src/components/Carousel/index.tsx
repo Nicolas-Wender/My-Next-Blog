@@ -3,17 +3,25 @@ import React from 'react'
 import { post } from '@/types/post'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
-import formDate from '@/util/formDate'
+import formDate from '@/utils/formDate'
+import Link from 'next/link'
+import { CustomBulletsSwiper } from '@/types/customBulletsSwiper'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
-import Link from 'next/link'
 
 export default function Carousel({ images }: { images: post[] }) {
   return (
-    <section className="py-28">
+    <section className="py-12 md:py-24">
       <div className="md:max-w-screen-xl md:mx-auto md:text-center md:px-8 ">
         <Swiper
+          style={
+            {
+              '--swiper-pagination-color': '#fafafa',
+              '--swiper-pagination-bullet-size': '10px',
+              '--swiper-pagination-bullet-inactive-color': '#999999'
+            } as CustomBulletsSwiper
+          }
           slidesPerView={1}
           loop={true}
           spaceBetween={30}
@@ -31,9 +39,9 @@ export default function Carousel({ images }: { images: post[] }) {
           {images.map(image => (
             <SwiperSlide key={image.id}>
               <Link href={`/posts/${image.id}`}>
-                <div className="max-w-screen-xl mx-auto border mb-10 md:rounded-3xl overflow-hidden">
+                <div className="max-w-screen-xl mx-auto mb-10 md:rounded-xl overflow-hidden">
                   <div className="relative lg:flex">
-                    <div className="absolute h-full lg:h-auto w-full md:flex md:flex-col md:justify-center  md:text-start p-5 lg:relative lg:w-1/3 bg-[rgba(21,26,32,0.7)] lg:bg-[rgba(21,26,32)] lg:py-32">
+                    <div className="absolute h-full lg:h-auto w-full md:flex md:flex-col md:justify-center bg-[rgba(24,24,27,0.8)] lg:bg-zinc-900 md:text-start p-5 lg:relative lg:w-1/3 lg:py-32">
                       <h3 className="text-white text-sm">
                         {image.author} • {formDate(image.date)}
                       </h3>
@@ -64,11 +72,11 @@ export default function Carousel({ images }: { images: post[] }) {
                         </svg>
                       </p>
                     </div>
-                    <div className="w-full space-y-3 lg:w-2/3">
+                    <div className="w-full space-y-3 lg:w-2/3 bg-zinc-900  ">
                       <img
                         src={image.img}
                         alt={image.title}
-                        className="w-full h-full"
+                        className="w-full h-full lg:rounded-xl"
                       />
                     </div>
                   </div>

@@ -5,6 +5,7 @@ import { MdArrowOutward } from 'react-icons/md'
 import Link from 'next/link'
 import { post } from '@/types/post'
 import { getPostMetadataPerPage } from '@/services/getPostMetadataPerPage'
+import formDate from '@/utils/formDate'
 
 export default async function RecentGridPosts() {
   let posts: post[] = await getPostMetadataPerPage(1)
@@ -31,7 +32,7 @@ export default async function RecentGridPosts() {
             />
             <div className="mt-8 md:mt-0 lg:pt-4 group h-1/2 flex flex-col gap-y-4">
               <span className="block text-indigo-600 text-sm font-semibold">
-                {posts[0].author} • {posts[0].date.toLocaleString()}
+                {posts[0].author} • {formDate(posts[0].date)}
               </span>
               <div className="flex justify-between items-start ">
                 <h3 className="text-2xl text-gray-800 duration-150 w-[90%] font-semibold group-hover:text-indigo-600">

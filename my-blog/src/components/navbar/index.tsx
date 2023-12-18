@@ -1,31 +1,28 @@
 'use client'
 import { useState } from 'react'
-import Link from 'next/link';
-
-interface NavigationItem {
-  title: string;
-  path: string;
-}
+import Link from 'next/link'
+import { NavigationItem } from '@/types/navigationItem'
 
 export default function Navbar() {
   const [state, setState] = useState<Boolean>(false)
 
-
   const navigation: NavigationItem[] = [
     { title: 'Home', path: '/' },
-    
     { title: 'About', path: '/About' },
     { title: 'Newsletter', path: '/Newsletter' }
   ]
 
   return (
-    <nav className="bg-white border-b w-full  md:text-sm md:border-none fixed top-0 z-50">
+    <nav className="backdrop-blur-sm bg-zinc-950/80 w-full md:text-sm fixed top-0 z-50">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <Link href="/" className='text-2xl font-semibold'>MY BLOG</Link>
+          <Link href="/" className="text-2xl md:text-4xl font-bold text-white">
+            MY BLOG
+          </Link>
+
           <div className="md:hidden">
             <button
-              className="text-gray-600 hover:text-gray-900"
+              className="text-white"
               onClick={() => setState(!state)}
             >
               {state ? (
@@ -61,15 +58,21 @@ export default function Navbar() {
           </div>
         </div>
         <div
-          className={`flex-1 pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+          className={`flex-1 my-8 md:block md:my-0 ${
             state ? 'block' : 'hidden'
           }`}
         >
-          <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0 text-sm gap-3">
+          <ul className="justify-end items-center space-y-6 md:flex md:space-x-10 md:space-y-0 text-sm">
             {navigation.map((item, idx) => {
               return (
-                <li key={idx} className="text-gray-600  hover:text-gray-900">
-                  <Link href={item.path} className="block text-base">
+                <li
+                  key={idx}
+                  className="text-white hover:bg-[rgba(82,82,91,0.5)] px-5 py-1 rounded-full"
+                >
+                  <Link
+                    href={item.path}
+                    className="block text-lg font-semibold"
+                  >
                     {item.title}
                   </Link>
                 </li>
@@ -81,5 +84,3 @@ export default function Navbar() {
     </nav>
   )
 }
-
-

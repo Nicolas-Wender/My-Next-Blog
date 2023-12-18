@@ -15,7 +15,6 @@ export default async function Home({
     <>
       <Hero />
       <Carousel images={posts} />
-      <RecentGridPosts />
       <GridPosts page={page} />
     </>
   )
