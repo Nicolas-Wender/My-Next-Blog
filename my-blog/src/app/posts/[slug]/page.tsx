@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import { getPostMetadata } from '@/components/PostCard/getPostMetadata'
-import { post } from '@/components/PostCard/PostMetadata'
+import { getPostMetadata } from '@/services/getPostMetadata'
+import { post } from '@/types/post'
 
 export default async function Page({ params }: { params: { slug: number } }) {
   const { slug } = params
