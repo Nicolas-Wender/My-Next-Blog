@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Newsletter() {
   return (
-    <section className="max-w-3xl mt-12 mx-auto px-4 md:px-8 h-[84vh] flex flex-col items-center justify-center">
+    <section className="max-w-3xl mt-12 mx-auto px-4 md:px-8 h-[90vh] flex flex-col items-center justify-center">
       <div className="space-y-3 text-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
