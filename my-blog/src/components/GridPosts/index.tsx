@@ -1,11 +1,8 @@
 import React from 'react'
 import PostCard from '../PostCard'
 import { post } from '@/types/post'
-import getPostMetadataMarkDown from '@/services/getPostMetadataMarkdown'
 
-export default async function GridPosts() {
-  const posts: post[] = getPostMetadataMarkDown()
-
+export default async function GridPosts({ posts }: { posts: post[] }) {
   return (
     <section className="py-16">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">

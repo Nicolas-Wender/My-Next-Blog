@@ -10,7 +10,7 @@ import { CustomBulletsSwiper } from '@/types/customBulletsSwiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-export default function Carousel({ images }: { images: post[] }) {
+export default function Carousel({ slides }: { slides: post[] }) {
   return (
     <section className="py-12 md:py-24">
       <div className="md:max-w-screen-xl md:mx-auto md:text-center md:px-8 ">
@@ -36,17 +36,17 @@ export default function Carousel({ images }: { images: post[] }) {
           modules={[Autoplay, Pagination]}
           className="mySwiper"
         >
-          {images.map(image => (
-            <SwiperSlide key={image.id}>
-              <Link href={`/posts/${image.id}`}>
+          {slides.map(slide => (
+            <SwiperSlide key={slide.slug}>
+              <Link href={`/posts/${slide.slug}`}>
                 <div className="max-w-screen-xl mx-auto mb-10 md:rounded-xl overflow-hidden">
                   <div className="relative lg:flex">
                     <div className="absolute h-full lg:h-auto w-full md:flex md:flex-col md:justify-center bg-[rgba(24,24,27,0.8)] lg:bg-zinc-900 md:text-start p-10 lg:relative lg:w-1/3 lg:py-32">
                       <h3 className="text-white text-sm">
-                        {image.author} • {formDate(image.date)}
+                        {slide.author} • {formDate(slide.date)}
                       </h3>
                       <p className="text-white text-3xl font-bold sm:text-4xl my-3 overflow-hidden text-ellipsis line-clamp-3 box-content">
-                        {image.title}
+                        {slide.title}
                       </p>
                       <p className="hidden md:inline-flex lg:hidden md:my-10 text-white overflow-hidden text-ellipsis line-clamp-4 box-content">
                         Duis aute irure dolor in reprehenderit in voluptate
@@ -74,8 +74,8 @@ export default function Carousel({ images }: { images: post[] }) {
                     </div>
                     <div className="w-full space-y-3 lg:w-2/3 bg-zinc-900  ">
                       <img
-                        src={image.img}
-                        alt={image.title}
+                        src={slide.img}
+                        alt={slide.title}
                         className="w-full h-full lg:rounded-xl"
                       />
                     </div>
