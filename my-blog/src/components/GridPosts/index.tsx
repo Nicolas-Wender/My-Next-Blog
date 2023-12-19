@@ -1,10 +1,10 @@
 import React from 'react'
 import PostCard from '../PostCard'
 import { post } from '@/types/post'
-import { getPostMetadataPerPage } from '@/services/getPostMetadataPerPage'
+import getPostMetadataMarkDown from '@/services/getPostMetadataMarkdown'
 
-export default async function GridPosts({ page }: { page: number }) {
-  const posts: post[] = await getPostMetadataPerPage(page)
+export default async function GridPosts() {
+  const posts: post[] = getPostMetadataMarkDown()
 
   return (
     <section className="py-16">
@@ -15,8 +15,8 @@ export default async function GridPosts({ page }: { page: number }) {
           </h1>
         </div>
         <ul className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map(item => (
-            <PostCard key={item.id} {...item} />
+          {posts.map(post => (
+            <PostCard key={post.slug} {...post} />
           ))}
         </ul>
       </div>

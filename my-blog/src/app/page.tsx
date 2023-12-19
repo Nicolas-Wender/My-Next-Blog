@@ -11,11 +11,12 @@ export default async function Home({
 }) {
   const page = parseInt(searchParams.page) || 1
   const posts = await getPostMetadataPerPage(1)
+  
   return (
     <>
       <Hero />
       <Carousel images={posts} />
-      <GridPosts page={page} />
+      <GridPosts />
     </>
   )
 }

@@ -1,10 +1,8 @@
 export interface post {
-  id: number
+  slug: string
   title: string
   desc: string
-  content: string
   img: string
-  date: Date
-  authorId: number
+  date: string
   author: string
 }
