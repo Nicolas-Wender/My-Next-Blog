@@ -4,7 +4,6 @@ import { MdArrowOutward } from 'react-icons/md'
 import Link from 'next/link'
 import { post } from '@/types/post'
 import formDate from '@/utils/formDate'
-import { hoverEffect } from '@/utils/hoverEffect'
 
 export default function PostCard(post: post) {
   return (
@@ -23,12 +22,7 @@ export default function PostCard(post: post) {
           </span>
 
           <div className="flex justify-between items-start ">
-            <h3
-              className={
-                'text-2xl text-white w-[90%] font-bold overflow-hidden text-ellipsis line-clamp-3 box-content' +
-                hoverEffect
-              }
-            >
+            <h3 className="text-2xl text-white w-[90%] font-bold overflow-hidden text-ellipsis line-clamp-3 box-content group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-[#4F46E5] to-[#E114E5] duration-300">
               {post.title}
             </h3>
             <MdArrowOutward className="text-2xl text-white group-hover:text-[#E114E5]" />

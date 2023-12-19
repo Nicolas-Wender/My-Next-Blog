@@ -1,1 +1,0 @@
-export const hoverEffect = ` group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-[#4F46E5] to-[#E114E5] duration-300`

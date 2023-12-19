@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { NavigationItem } from '@/types/navigationItem'
-import { hoverEffect } from '@/utils/hoverEffect'
 
 export default function Navbar() {
   const [state, setState] = useState<Boolean>(false)
@@ -66,7 +65,7 @@ export default function Navbar() {
                 <li key={idx} className={'text-white group'}>
                   <Link
                     href={item.path}
-                    className={'block text-lg font-semibold' + hoverEffect}
+                    className="block text-lg font-semibold group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-[#4F46E5] to-[#E114E5] duration-300"
                   >
                     {item.title}
                   </Link>
