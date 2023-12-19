@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
 import { post } from '@/types/post'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
@@ -12,7 +13,7 @@ import 'swiper/css/pagination'
 
 export default function Carousel({ slides }: { slides: post[] }) {
   return (
-    <section className="py-12 md:py-24">
+    <section className="py-10 ">
       <div className="md:max-w-screen-xl md:mx-auto md:text-center md:px-8 ">
         <Swiper
           style={
@@ -73,10 +74,12 @@ export default function Carousel({ slides }: { slides: post[] }) {
                       </p>
                     </div>
                     <div className="w-full space-y-3 lg:w-2/3 bg-zinc-900  ">
-                      <img
+                      <Image
                         src={slide.img}
                         alt={slide.title}
-                        className="w-full h-full lg:rounded-xl"
+                        className="w-full h-60 md:h-[30rem] xl:h-[34rem] lg:rounded-xl"
+                        width={600}
+                        height={600}
                       />
                     </div>
                   </div>

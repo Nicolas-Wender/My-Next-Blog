@@ -10,7 +10,7 @@ export default function PostCard(post: post) {
     <li className="w-full mx-auto sm:max-w-sm bg-zinc-900 rounded-xl overflow-hidden group">
       <Link href={`/posts/${post.slug}`}>
         <Image
-          className="w-full rounded-xl"
+          className="w-full h-52 xl:h-64 rounded-xl"
           src={post.img}
           alt={post.title}
           width={300}

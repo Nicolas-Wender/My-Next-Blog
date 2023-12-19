@@ -1,7 +1,7 @@
 ---
-title: "Getting Started with AWS"
+title: "Using AI to generate poetry"
 desc: "Going into this journey, I had a standard therapy regimen, based on looking at the research literature. After I saw the movie, I started to ask other people."
-img: "https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+img: "https://images.unsplash.com/photo-1525338078858-d762b5e32f2c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 date: "2020-12-27"
 author: "Demi WIlkinson"
 ---
