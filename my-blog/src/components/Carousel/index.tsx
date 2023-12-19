@@ -36,7 +36,7 @@ export default function Carousel({ slides }: { slides: post[] }) {
           modules={[Autoplay, Pagination]}
           className="mySwiper"
         >
-          {slides.map(slide => (
+          {slides.slice(0, 5).map(slide => (
             <SwiperSlide key={slide.slug}>
               <Link href={`/posts/${slide.slug}`}>
                 <div className="max-w-screen-xl mx-auto mb-10 md:rounded-xl overflow-hidden">

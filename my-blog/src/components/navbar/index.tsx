@@ -1,9 +1,11 @@
 'use client'
 import { useState } from 'react'
+import { useScroll } from '@/hooks/useScroll'
 import Link from 'next/link'
 import { NavigationItem } from '@/types/navigationItem'
 
 export default function Navbar() {
+  const { scrollDirection } = useScroll()
   const [state, setState] = useState<Boolean>(false)
 
   const navigation: NavigationItem[] = [
@@ -12,8 +14,18 @@ export default function Navbar() {
     { title: 'Newsletter', path: '/Newsletter' }
   ]
 
+  const styles = {
+    active: ' transition-all duration-500',
+    hidden: ' transition-all duration-500 -translate-y-full'
+  }
+
   return (
-    <nav className="backdrop-blur-sm bg-zinc-950/80 w-full md:text-sm fixed top-0 z-50">
+    <nav
+      className={
+        'backdrop-blur-sm bg-zinc-950/80 w-full md:text-sm fixed top-0 z-50' +
+        (scrollDirection === 'down' ? styles.active : styles.hidden)
+      }
+    >
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link href="/" className="text-2xl md:text-4xl font-bold text-white">
