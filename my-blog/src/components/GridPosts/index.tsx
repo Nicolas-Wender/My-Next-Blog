@@ -4,10 +4,14 @@ import { useState } from 'react'
 import PostCard from '../PostCard'
 import { post } from '@/types/post'
 import Search from '../Search'
+import Pagination from '../Pagination'
 
 export default function GridPosts({ posts }: { posts: post[] }) {
   const [searchParams, setSearchParams] = useState('')
   const [postsFilter, setPostsFilter] = useState(posts)
+  const [currentPage, setCurrentPage] = useState(1)
+  const postPerPage = 6
+  const totalPages = Math.ceil(posts.length / postPerPage)
 
   useEffect(() => {
     const newPostsFilter = posts.filter(post => {
@@ -27,11 +31,18 @@ export default function GridPosts({ posts }: { posts: post[] }) {
           </h1>
         </div>
         <ul className="grid gap-x-8 gap-y-10 mt-6 sm:grid-cols-2 lg:grid-cols-3">
-          {postsFilter.map(post => (
-            <PostCard key={post.slug} {...post} />
-          ))}
+          {postsFilter
+            .slice(postPerPage * (currentPage - 1), postPerPage * currentPage)
+            .map(post => (
+              <PostCard key={post.slug} {...post} />
+            ))}
         </ul>
       </div>
+      <Pagination
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalPages={totalPages}
+      />
     </section>
   )
 }
