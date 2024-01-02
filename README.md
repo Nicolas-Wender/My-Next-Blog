@@ -1,8 +1,10 @@
 # My-Next-Blog
 
-Bem-vindo ao repositório do meu projeto pessoal onde construi um blog desenvolvido em Next.js 13! Desenvolvi o projeto com o intuito de colocar em pratica os conhecimentos em next.js e app router. O blog e utiliza arquivos Markdown para os posts.
+Bem-vindo ao repositório do meu projeto pessoal, no qual desenvolvi um blog utilizando Next.js 13! Criei este projeto com o objetivo de colocar em prática meus conhecimentos em Next.js e App Router. O blog utiliza arquivos Markdown para as postagens.
 
-Utilizei a biblioteca swiper para criar o carrossel, a biblioteca gray-matter junto com markdown-to-jsx para renderizar os aquivos markdown, e tailwindcss/typography para a estilização das páginas escritas em markdown
+Para implementar funcionalidades adicionais, adotei a biblioteca Swiper para criar um carrossel. Além disso, utilizei as bibliotecas Gray-Matter em conjunto com Markdown-to-JSX para a renderização dos arquivos Markdown. A estilização das páginas escritas em Markdown foi feita utilizando Tailwind CSS e Typography.
+
+Fique à vontade para explorar o código !
 
 ### 📋 Pré-requisitos
 
@@ -11,7 +13,7 @@ Node versão 14
 ### Clonando o repositório
 
 ```
-git clone https://github.com/AntonioErdeljac/next13-ecommerce-admin.git
+git clone https://github.com/Nicolas-Wender/My-Next-Blog.git
 ```
 
 ### Instalando dependências
