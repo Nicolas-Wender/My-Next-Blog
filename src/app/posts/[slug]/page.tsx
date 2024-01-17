@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import getPostContent from '@/services/getPostContent'
+import { getPostContent } from '@/services/getPosts'
 import Markdown from 'markdown-to-jsx'
 
 export default async function Page({ params }: { params: { slug: string } }) {

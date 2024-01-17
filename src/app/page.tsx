@@ -1,7 +1,7 @@
 import Carousel from '@/components/Carousel'
 import GridPosts from '@/components/GridPosts'
 import Hero from '@/components/Hero'
-import getPostMetadataMarkDown from '@/services/getPostMetadataMarkdown'
+import { getPostMetadataMarkDown } from '@/services/getPosts'
 import { post } from '@/types/post'
 
 export default function Home() {
